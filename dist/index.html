@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Journal</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <a href="../" target="_self"><img id="homeButton"></a>
+
+    <div class ="hero">
+      Travel Planner &#128197
+    </div>
+
+    <div class = "intro">
+      Welcome! I created this super simple web app as a capstone project for completing <a href = "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011">Udacity's nanodegree in front-end web development</a>. This project is designed to bring together what I learned from <a href = "https://github.com/yuqiliao/udacity-nanodegree-front-end-web-dev">all previous projects</a> (e.g. Website Layout, CSS, Sass, JavaScript, Web APIs, Asynchronous apps, build tools, etc.). It is also designed to calm down the travel bug inside of me during this strange time of COVID-19. Feedbacks are encouraged!
+    </div>
+
+    <div class = "main">
+      <div class ="destination">
+        <label for="city">I'm going to: </label>
+        <input type="text" id="city" placeholder="Enter a city name here">
+      </div>
+      <div class ="departureDate">
+        <label for="departureDate">Departing on: </label>
+        <input type="date" id="departureDate" required>
+      </div>
+      <div class ="buttons">
+        <button id="saveButton" type = "submit"> Save trip</button>
+        <button id="removeButton" type = "submit"> Remove trip</button>
+      </div>
+      <div id ="cityPic"><img src= "https://cdn.pixabay.com/photo/2017/01/16/15/51/hiker-1984421_960_720.jpg" alt = "destination city picture"></div>
+      <div id ="results"></div>  
+    </div>
+
+    <div class ="footer">
+      &copy; Yuqi 2020
+    </div>
+
+    <!-- for service worker -->
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/service-worker.js');
+          });
+      }
+  </script>
+
+  <script type="text/javascript" src="main.js"></script></body>
+</html>
